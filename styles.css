@@ -97,14 +97,17 @@ button {
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(250, 250, 250, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
 }
 
 .nav.scrolled {
+    background: rgba(250, 250, 250, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom-color: var(--color-border);
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.04);
 }
@@ -133,11 +136,19 @@ button {
 .nav-links a {
     font-size: 0.9rem;
     font-weight: 500;
-    color: var(--color-text-secondary);
-    transition: color 0.2s;
+    color: rgba(255, 255, 255, 0.85);
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
+    color: #fff;
+}
+
+.nav.scrolled .nav-links a {
+    color: var(--color-text-secondary);
+}
+
+.nav.scrolled .nav-links a:hover {
     color: var(--color-text);
 }
 
@@ -166,9 +177,13 @@ button {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--color-text);
+    background: #fff;
     border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s, background 0.3s;
+}
+
+.nav.scrolled .nav-toggle span {
+    background: var(--color-text);
 }
 
 .nav-toggle.active span:nth-child(1) {
@@ -858,6 +873,20 @@ button {
 
     .nav-links.open {
         transform: translateY(0);
+    }
+
+    /* Force dark text inside the white mobile dropdown */
+    .nav-links.open a {
+        color: var(--color-text-secondary) !important;
+    }
+
+    .nav-links.open a:hover {
+        color: var(--color-text) !important;
+    }
+
+    /* Dark hamburger icon when menu is open */
+    .nav-toggle.active span {
+        background: var(--color-text) !important;
     }
 
     .nav-toggle {
