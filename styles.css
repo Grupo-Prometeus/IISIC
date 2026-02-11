@@ -880,17 +880,21 @@ button {
         transition: transform 0.4s var(--ease-out), visibility 0s 0s, opacity 0.3s;
     }
 
-    /* Force dark text inside the white mobile dropdown */
-    .nav-links.open a {
+    /* Force dark text inside the white mobile dropdown, except the CTA button */
+    .nav-links.open a:not(.nav-cta) {
         color: var(--color-text-secondary) !important;
     }
 
-    .nav-links.open a:hover {
+    .nav-links.open a:not(.nav-cta):hover {
         color: var(--color-text) !important;
     }
 
-    /* Dark hamburger icon when menu is open */
-    .nav-toggle.active span {
+    .nav-links.open .nav-cta {
+        color: white !important;
+    }
+
+    /* Hamburger X: dark only when scrolled, white otherwise */
+    .nav.scrolled .nav-toggle.active span {
         background: var(--color-text) !important;
     }
 
