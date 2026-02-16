@@ -742,6 +742,18 @@ button {
     color: var(--accent-1);
 }
 
+.member-email {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--accent-2);
+    margin-top: 0.3rem;
+    transition: color 0.2s;
+}
+
+.member-email:hover {
+    color: var(--color-text);
+}
+
 /* --- Organizers --- */
 .section-organizers {
     background: var(--color-bg);
