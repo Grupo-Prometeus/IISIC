@@ -1,0 +1,416 @@
+/* =========================================================
+   Programa Page — Styles
+   ========================================================= */
+
+/* --- Reuse nav override from directrices --- */
+.nav-directrices {
+    background: rgba(250, 250, 250, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.nav-directrices .nav-links a {
+    color: var(--color-text-secondary);
+}
+
+.nav-directrices .nav-links a:hover {
+    color: var(--color-text);
+}
+
+.nav-directrices .nav-toggle span {
+    background: var(--color-text);
+}
+
+/* --- Hero --- */
+.prog-hero {
+    position: relative;
+    padding: calc(72px + 4rem) 0 4rem;
+    background: var(--hero-dark);
+    color: white;
+    overflow: hidden;
+}
+
+.prog-hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.prog-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.prog-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2rem;
+    transition: color 0.2s, gap 0.2s;
+}
+
+.prog-back:hover {
+    color: white;
+    gap: 12px;
+}
+
+.prog-hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    max-width: 700px;
+}
+
+.prog-hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.prog-hero-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.prog-date-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.prog-date-item svg {
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+.prog-date-item strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Notice --- */
+.prog-notice-section {
+    padding: 2.5rem 0 0;
+}
+
+.prog-notice {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 127, 80, 0.06);
+    border: 1px solid rgba(255, 127, 80, 0.15);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    color: var(--accent-4);
+}
+
+.prog-notice svg {
+    flex-shrink: 0;
+}
+
+.prog-notice p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+/* --- Schedule Timeline --- */
+.prog-schedule {
+    padding: clamp(3rem, 6vw, 4rem) 0;
+}
+
+.prog-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* --- Timeline Item --- */
+.prog-item {
+    display: grid;
+    grid-template-columns: 80px 40px 1fr;
+    gap: 0;
+    min-height: 80px;
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+}
+
+.prog-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.prog-item:nth-child(1).in-view {
+    transition-delay: 0s;
+}
+
+.prog-item:nth-child(2).in-view {
+    transition-delay: 0.04s;
+}
+
+.prog-item:nth-child(3).in-view {
+    transition-delay: 0.08s;
+}
+
+.prog-item:nth-child(4).in-view {
+    transition-delay: 0.12s;
+}
+
+.prog-item:nth-child(5).in-view {
+    transition-delay: 0.16s;
+}
+
+.prog-item:nth-child(6).in-view {
+    transition-delay: 0.2s;
+}
+
+.prog-item:nth-child(7).in-view {
+    transition-delay: 0.24s;
+}
+
+.prog-item:nth-child(8).in-view {
+    transition-delay: 0.28s;
+}
+
+.prog-item:nth-child(9).in-view {
+    transition-delay: 0.32s;
+}
+
+.prog-item:nth-child(10).in-view {
+    transition-delay: 0.36s;
+}
+
+/* --- Time Column --- */
+.prog-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 1.2rem;
+    padding-right: 0;
+}
+
+.prog-time-start {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+}
+
+.prog-time-end {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-top: 4px;
+}
+
+/* --- Connector --- */
+.prog-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.35rem;
+}
+
+.prog-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.prog-dot-last {
+    background: var(--accent-1);
+}
+
+.prog-line {
+    width: 2px;
+    flex: 1;
+    background: var(--color-border);
+}
+
+/* --- Card --- */
+.prog-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 1.2rem 1.5rem;
+    margin: 0.4rem 0 0.4rem 0;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.prog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+.prog-card-break {
+    background: var(--color-surface);
+    border-style: dashed;
+}
+
+.prog-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: var(--color-text);
+}
+
+.prog-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+.prog-pending {
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* --- Badges --- */
+.prog-card-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+    margin-bottom: 0.6rem;
+}
+
+.prog-badge-general {
+    background: rgba(29, 144, 255, 0.1);
+    color: var(--accent-2);
+}
+
+.prog-badge-medicina {
+    background: rgba(255, 146, 175, 0.12);
+    color: var(--accent-1);
+}
+
+.prog-badge-nutricion {
+    background: rgba(255, 127, 80, 0.1);
+    color: var(--accent-4);
+}
+
+.prog-badge-odontologia {
+    background: rgba(29, 144, 255, 0.1);
+    color: var(--accent-2);
+}
+
+.prog-badge-break {
+    background: rgba(7, 192, 61, 0.1);
+    color: var(--accent-3);
+}
+
+.prog-badge-psicologia {
+    background: rgba(7, 192, 61, 0.1);
+    color: var(--accent-3);
+}
+
+.prog-badge-inmunologia {
+    background: rgba(131, 103, 199, 0.12);
+    color: var(--accent-5);
+}
+
+.prog-badge-ponencias {
+    background: rgba(255, 146, 175, 0.12);
+    color: var(--accent-1);
+}
+
+/* --- Dot Colors per Category --- */
+.prog-item-general .prog-dot {
+    background: var(--accent-2);
+}
+
+.prog-item-medicina .prog-dot {
+    background: var(--accent-1);
+}
+
+.prog-item-nutricion .prog-dot {
+    background: var(--accent-4);
+}
+
+.prog-item-odontologia .prog-dot {
+    background: var(--accent-2);
+}
+
+.prog-item-break .prog-dot {
+    background: var(--accent-3);
+}
+
+.prog-item-psicologia .prog-dot {
+    background: var(--accent-3);
+}
+
+.prog-item-inmunologia .prog-dot {
+    background: var(--accent-5);
+}
+
+.prog-item-ponencias .prog-dot {
+    background: var(--accent-1);
+}
+
+.prog-item-clausura .prog-dot {
+    background: var(--accent-1);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width: 768px) {
+    .prog-item {
+        grid-template-columns: 60px 30px 1fr;
+    }
+
+    .prog-time-start {
+        font-size: 0.82rem;
+    }
+
+    .prog-time-end {
+        font-size: 0.7rem;
+    }
+
+    .prog-card {
+        padding: 1rem 1.2rem;
+    }
+
+    .prog-card h3 {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .prog-item {
+        grid-template-columns: 50px 24px 1fr;
+    }
+
+    .prog-dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .prog-card {
+        padding: 0.8rem 1rem;
+        border-radius: 10px;
+    }
+}
