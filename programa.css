@@ -192,9 +192,9 @@
     transition-delay: 0.32s;
 }
 
-.prog-item:nth-child(10).in-view {
-    transition-delay: 0.36s;
-}
+.prog-item:nth-child(10).in-view { transition-delay: 0.36s; }
+.prog-item:nth-child(11).in-view { transition-delay: 0.4s; }
+.prog-item:nth-child(12).in-view { transition-delay: 0.44s; }
 
 /* --- Time Column --- */
 .prog-time {
