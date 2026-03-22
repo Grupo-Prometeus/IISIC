@@ -285,6 +285,49 @@
     opacity: 0.7;
 }
 
+/* --- Talks List --- */
+.prog-talks-list {
+    list-style: none;
+    counter-reset: talk;
+    padding: 0;
+    margin: 0.8rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.prog-talks-list li {
+    counter-increment: talk;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.7rem 0.9rem;
+    background: var(--color-surface);
+    border-radius: 10px;
+    border-left: 3px solid var(--accent-1);
+    position: relative;
+}
+
+.prog-talks-list li::before {
+    content: counter(talk) ".";
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent-1);
+    opacity: 0.7;
+}
+
+.prog-talks-list li strong {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.prog-talks-list li span {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
 /* --- Badges --- */
 .prog-card-badge {
     display: inline-block;
